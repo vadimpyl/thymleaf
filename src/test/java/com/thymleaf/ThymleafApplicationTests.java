@@ -1,4 +1,4 @@
-package com.magisterka.thymleaf;
+package com.thymleaf;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.magisterka.thymleaf;
+package com.thymleaf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

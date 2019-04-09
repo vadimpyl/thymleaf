@@ -1,4 +1,4 @@
-package com.magisterka.thymleaf;
+package com.thymleaf;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -8,15 +8,16 @@ import java.util.Map;
 
 @Controller
 @EnableAutoConfiguration
-public class SampleController
+public class LoginController
 {
-
     private String message = "Hello World";
 
-    @RequestMapping("/")
-    public String welcome(Map<String, Object> model) {
-        model.put("message", this.message);
-        return "welcome";
+    @RequestMapping("/login")
+    public String welcome(Map<String, Object> model)
+
+    {
+        //model.put("message", this.message);
+        return "login";
     }
 
 }

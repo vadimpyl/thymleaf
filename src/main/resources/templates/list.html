@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+Welcome,<span th:text="${currentUser}"/> <a th:href="@{/logout}">logout</a>
+
+<form th:action="@{/searchByDate}" method="post">
+
+    <table>
+        <tr>
+            <td>
+                <label for="birthDateFrom">Birth Date From</label>
+            </td>
+            <td>
+                <input id="birthDateFrom" type="date" th:value="*{birthDateFrom}" name="birthDateFrom"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="birthDateTo">Birth Date To</label>
+            </td>
+            <td>
+                <input id="birthDateTo" type="date" th:value="*{birthDateTo}" name="birthDateTo"/>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Search"/>
+</form>
+
+
+
+
+<span th:text="${#lists.size(users)}">2</span> elements
+<table>
+    <thead>
+    <tr>
+        <th> Login </th>
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th> Birth Date </th>
+        <th> Birth City </th>
+        <th> Birth Country </th>
+        <th> Edit </th>
+        <th> Delete </th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr th:each="user : ${users}">-->
+    <tr th:each="user : ${#lists.sort(users)}">
+        <td><span th:text="${user.login}"> Login </span></td>
+        <td><span th:text="${user.firstName}"> First Name </span></td>
+        <td><span th:text="${user.lastName}"> Last Name </span></td>
+        <td><span th:text="${{user.birthDate}}"> Birth Date </span></td>
+        <td><span th:text="${user.birthCity}"> Birth City </span></td>
+        <td><span th:text="${user.birthCountry}"> Birth Country </span></td>
+        <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -93,6 +93,25 @@ public class ListController
         return "list";
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private String getCurrentUser()
     {
 

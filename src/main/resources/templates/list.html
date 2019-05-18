@@ -31,9 +31,6 @@ Welcome,<span th:text="${currentUser}"/> <a th:href="@{/logout}">logout</a>
     <input type="submit" value="Search"/>
 </form>
 
-
-
-
 <span th:text="${#lists.size(users)}">2</span> elements
 <table>
     <thead>
@@ -49,7 +46,6 @@ Welcome,<span th:text="${currentUser}"/> <a th:href="@{/logout}">logout</a>
     </tr>
     </thead>
     <tbody>
-    <!--<tr th:each="user : ${users}">-->
     <tr th:each="user : ${#lists.sort(users)}">
         <td><span th:text="${user.login}"> Login </span></td>
         <td><span th:text="${user.firstName}"> First Name </span></td>

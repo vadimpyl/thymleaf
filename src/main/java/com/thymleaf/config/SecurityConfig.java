@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .defaultSuccessUrl("/list")
                 .permitAll()
                 .and()
                 .logout()
@@ -40,10 +41,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .logoutSuccessUrl("/login")
                 .permitAll();
     }
-
-//
-//    @Autowired
-//    DataSource dataSource;
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {

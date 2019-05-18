@@ -4,16 +4,18 @@
 <head>
     <style>
         .error {color: red;}
+        form {    margin-left: 40%;
+            margin-top: 10%;}
     </style>
-    <title>Spring Security Example </title>
+    <title>Title</title>
 </head>
 <body>
 
 <form th:action="@{/login}" method="post">
 
-    <label for="username">Username</label>:
+    <label for="username">Username</label>
     <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
-    <label for="password">Password</label>:
+    <label for="password">Password </label>
     <input type="password" id="password" name="password" /> <br />
     <div class="error" th:if="${param.error}">
         Invalid username and password.

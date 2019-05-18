@@ -10,13 +10,11 @@ import java.util.Map;
 @EnableAutoConfiguration
 public class LoginController
 {
-    private String message = "Hello World";
 
     @RequestMapping("/login")
     public String welcome(Map<String, Object> model)
 
     {
-        //model.put("message", this.message);
         return "login";
     }
 
